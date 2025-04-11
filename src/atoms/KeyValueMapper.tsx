@@ -1,18 +1,12 @@
 import React from "react";
-
+import "../styles/key-value-mapper.css";
 interface IKeyValueMapper {
   label: string;
   value: string | number;
 }
 function KeyValueMapper({ label, value }: Readonly<IKeyValueMapper>) {
   return (
-    <p
-      style={{
-        fontSize: "0.875rem",
-        color: "#4b5563",
-        margin: "0.25rem 0",
-      }}
-    >
+    <p className="key-value-mapper">
       <strong>{label}:</strong> {value}
     </p>
   );

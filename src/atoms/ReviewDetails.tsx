@@ -1,19 +1,12 @@
 import React from "react";
 import { Review } from "../types/types";
+import { formattedDate } from "../utils/date-formatter";
 
 interface IReviewDetails {
   review: Review;
 }
 
 const ReviewDetails = ({ review }: IReviewDetails) => {
-  // Format date (e.g., "May 23, 2024")
-  const formattedDate = new Date(review.date).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  });
-
-  // Generate star rating display (e.g., "★★☆☆☆")
   const starRating = "★".repeat(review.rating) + "☆".repeat(5 - review.rating);
 
   return (
@@ -28,7 +21,6 @@ const ReviewDetails = ({ review }: IReviewDetails) => {
         boxShadow: "0 2px 4px rgba(0, 0, 0, 0.05)",
       }}
     >
-      {/* Review Header */}
       <div
         style={{
           display: "flex",
@@ -41,11 +33,10 @@ const ReviewDetails = ({ review }: IReviewDetails) => {
           {review.reviewerName}
         </span>
         <span style={{ fontSize: "0.85rem", color: "#777" }}>
-          {formattedDate}
+          {formattedDate(review.date)}
         </span>
       </div>
 
-      {/* Rating (styled red if <= 2) */}
       <div
         style={{
           color: review.rating <= 2 ? "#ff6b6b" : "#ffb400",
@@ -55,12 +46,10 @@ const ReviewDetails = ({ review }: IReviewDetails) => {
         {starRating} ({review.rating}/5)
       </div>
 
-      {/* Comment */}
       <p style={{ color: "#333", lineHeight: "1.5", marginBottom: "8px" }}>
         "{review.comment}"
       </p>
 
-      {/* Email (verified buyer) */}
       <div style={{ fontSize: "0.8rem", color: "#666", fontStyle: "italic" }}>
         Verified buyer: {review.reviewerEmail}
       </div>

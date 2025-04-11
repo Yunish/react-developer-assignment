@@ -1,0 +1,30 @@
+.layout-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.left-panel {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+}
+
+.right-panel {
+  width: 300px;
+  border-left: 1px solid #ccc;
+  overflow-y: auto;
+  padding: 16px;
+}
+
+@media (max-width: 768px) {
+  .layout-container {
+    flex-direction: column;
+  }
+
+  .right-panel {
+    width: 100%;
+    border-left: none;
+    border-top: 1px solid #ccc;
+  }
+}

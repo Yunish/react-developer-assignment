@@ -43,7 +43,6 @@ const ProductDetails: React.FC = () => {
         </div>
       ) : (
         <>
-          {/* Product Header */}
           <div style={{ marginBottom: "2rem" }}>
             <h1 className="product-title">{product?.title}</h1>
             <div
@@ -65,33 +64,28 @@ const ProductDetails: React.FC = () => {
             </div>
           </div>
 
-          {/* Main Content Grid */}
           <div className="product-image">
-            {/* Image Gallery - Takes full width on mobile, half on desktop */}
             <div
               style={{
                 flex: 1,
                 backgroundColor: "#f9f9f9",
                 borderRadius: "8px",
                 padding: "1rem",
-                minWidth: 0, // Prevents flex overflow
+                minWidth: 0, 
               }}
             >
               <ProductImageGallery images={product?.images ?? []} />
             </div>
 
-            {/* Product Info - Stacks below image on mobile */}
             <div
               style={{
                 flex: 1,
                 display: "flex",
                 flexDirection: "column",
                 gap: "1.5rem",
-                minWidth: 0, // Prevents flex overflow
+                minWidth: 0, 
               }}
-            >
-              {/* Price Section */}
-              <div
+            ><div
                 style={{
                   backgroundColor: "#f5f5f5",
                   padding: "1.25rem",
@@ -114,7 +108,6 @@ const ProductDetails: React.FC = () => {
                 />
               </div>
 
-              {/* Key Details */}
               <div
                 style={{
                   border: "1px solid #eee",
@@ -168,7 +161,6 @@ const ProductDetails: React.FC = () => {
             </div>
           </div>
 
-          {/* Reviews Section */}
           <div>
             <h3
               style={{
