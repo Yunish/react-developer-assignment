@@ -1,0 +1,25 @@
+.discount-price {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #111827;
+  margin-right: 0.5rem;
+}
+
+.price {
+  font-size: 0.875rem;
+  color: #9ca3af;
+  text-decoration: line-through;
+}
+
+.discount-price-amount {
+  float: "right";
+  font-size: "0.875rem";
+  font-weight: "500";
+  color: "#ef4444";
+}
+
+.actual-price {
+  font-size: "1.25rem";
+  font-weight: "bold";
+  color: "#111827";
+}
